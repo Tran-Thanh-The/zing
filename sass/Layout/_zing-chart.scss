@@ -1,0 +1,82 @@
+
+.zing-chart { 
+    position: relative;
+    padding: 20px;
+    margin: 90px 30px 30px;
+    border-radius: 10px;
+    // background: url("https://zjs.zadn.vn/zmp3-desktop/releases/v1.3.17/static/media/bg-chart.fd766403.jpg") no-repeat center;
+    background-color: #531066;
+    overflow: hidden;
+    
+    .container {
+
+        .title {
+            font-size: 20px; 
+        }
+
+        .is-chart {
+            display: flex;
+
+            .zing-chart-left {
+                width: 32%;
+                
+                .top {
+                    display: flex;
+                    background-color: rgba($color: #fff, $alpha: 0.1);
+                    height: 80px;
+                    border-radius: 10px;
+                    margin: 10px 0;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .top-list {
+                        display: flex;
+                        align-items: center;
+
+                        .top-list-number {
+                            font-size: 32px;
+                            font-weight: 600;
+                            margin-left: 15px;
+                        }
+
+                        img {
+                            margin-left: 15px;
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 6px;
+                        }
+
+                        .detail {
+                            display: flex;
+                            flex-direction: column;
+                            margin-left: 10px;
+                            width: 60%;
+
+                            span {
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                            }
+                            .name {
+                                font-size: 14px;
+                                color: #ffffff;
+                            }
+                            .singer {
+                                font-size: 12px;
+                                color: #dadada;
+                            }
+                        }
+                    }
+
+                    .percent {
+                        margin-right: 15px;
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+        }
+    }
+
+}
