@@ -3,6 +3,7 @@ $(document).ready(function() {
     showListSong();
     showAddPlaylist();
     showSidebar();
+    handleChart();
 
     const pause = $('.pause');
     const playing = $('.btn-play');

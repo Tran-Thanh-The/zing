@@ -196,14 +196,14 @@
         }
 
         .content-radio {
-            margin: 30px 30px 0;
-
+            margin: 30px;
+        
             h3 {
                 font-size: 20px;
                 margin-bottom: 16px;
             }
            .container {
-
+                padding-bottom: 45px;
                 .content-item {
                     position: relative;
                     padding: 0 16px;
@@ -261,14 +261,14 @@
                         left: 0;
                         top: 103%;
                         text-align: center;
-                        .main {
+                        .main-title {
                             font-size: 14px;
                             margin: 0;
                             padding: 0;
                             text-transform: uppercase;
                             height: unset;
                         }
-                        .sub {
+                        .sub-title {
                             font-size: 12px;
                             font-weight: inherit;
                             color: #666;

@@ -555,10 +555,29 @@ body {
 .zing-chart {
   position: relative;
   padding: 20px;
-  margin: 90px 30px 30px;
+  margin: 30px;
   border-radius: 10px;
-  background-color: #531066;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: 1; }
+  .zing-chart .bg {
+    background-color: #531066;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    opacity: 0.9;
+    z-index: -1; }
+  .zing-chart .bg-img {
+    background: url("https://zjs.zadn.vn/zmp3-desktop/releases/v1.3.17/static/media/bg-chart.fd766403.jpg") no-repeat center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    z-index: -2; }
   .zing-chart .container .title {
     font-size: 20px; }
   .zing-chart .container .is-chart {
@@ -569,13 +588,14 @@ body {
         display: flex;
         background-color: rgba(255, 255, 255, 0.1);
         height: 80px;
-        border-radius: 10px;
+        border-radius: 6px;
         margin: 10px 0;
         align-items: center;
         justify-content: space-between; }
         .zing-chart .container .is-chart .zing-chart-left .top .top-list {
           display: flex;
-          align-items: center; }
+          align-items: center;
+          width: calc(100% - 55px); }
           .zing-chart .container .is-chart .zing-chart-left .top .top-list .top-list-number {
             font-size: 32px;
             font-weight: 600;
@@ -584,12 +604,12 @@ body {
             margin-left: 15px;
             width: 60px;
             height: 60px;
-            border-radius: 6px; }
+            border-radius: 2px; }
           .zing-chart .container .is-chart .zing-chart-left .top .top-list .detail {
             display: flex;
             flex-direction: column;
             margin-left: 10px;
-            width: 60%; }
+            width: calc(100% - 120px); }
             .zing-chart .container .is-chart .zing-chart-left .top .top-list .detail span {
               overflow: hidden;
               white-space: nowrap;
@@ -604,6 +624,33 @@ body {
           margin-right: 15px;
           font-size: 20px;
           font-weight: 600; }
+      .zing-chart .container .is-chart .zing-chart-left .chart-btn {
+        display: flex; }
+        .zing-chart .container .is-chart .zing-chart-left .chart-btn a {
+          margin: 10px auto;
+          padding: 4px 26px;
+          color: #fff;
+          border: 1px solid #fff;
+          border-radius: 999px;
+          text-decoration: none; }
+    .zing-chart .container .is-chart .zing-chart-right {
+      width: 68%;
+      display: flex; }
+      .zing-chart .container .is-chart .zing-chart-right .container {
+        margin: auto;
+        width: 90%; }
+        .zing-chart .container .is-chart .zing-chart-right .container canvas {
+          width: 100%; }
+
+@media (max-width: 1239px) {
+  .zing-chart .bg-img {
+    background-size: cover; }
+  .zing-chart .container .is-chart {
+    flex-direction: column-reverse; }
+    .zing-chart .container .is-chart .zing-chart-left {
+      width: 100%; }
+    .zing-chart .container .is-chart .zing-chart-right {
+      width: 100%; } }
 
 .app {
   position: relative; }
@@ -998,63 +1045,65 @@ body {
             text-overflow: ellipsis;
             margin-right: 15px; }
     .main .main-container .content-radio {
-      margin: 30px 30px 0; }
+      margin: 30px; }
       .main .main-container .content-radio h3 {
         font-size: 20px;
         margin-bottom: 16px; }
-      .main .main-container .content-radio .container .content-item {
-        position: relative;
-        padding: 0 16px; }
-        .main .main-container .content-radio .container .content-item svg {
-          position: absolute;
-          top: 0px;
-          left: 0;
-          transform: rotate(-90deg);
-          z-index: 10; }
-        .main .main-container .content-radio .container .content-item .img {
-          width: 100%; }
-          .main .main-container .content-radio .container .content-item .img img {
-            width: 100%;
-            height: 100%;
-            border-radius: 999px; }
-          .main .main-container .content-radio .container .content-item .img .nag {
-            border-radius: 999px; }
-          .main .main-container .content-radio .container .content-item .img .sub span {
+      .main .main-container .content-radio .container {
+        padding-bottom: 45px; }
+        .main .main-container .content-radio .container .content-item {
+          position: relative;
+          padding: 0 16px; }
+          .main .main-container .content-radio .container .content-item svg {
             position: absolute;
-            z-index: 10;
-            padding: 0px 16px;
-            border-radius: 4px;
-            background-color: red;
-            text-transform: uppercase;
-            font-size: 10px;
-            font-weight: 600;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%); }
-          .main .main-container .content-radio .container .content-item .img .sub img {
-            position: absolute;
-            right: 0;
-            top: 60%;
-            width: 30%;
-            height: auto;
+            top: 0px;
+            left: 0;
+            transform: rotate(-90deg);
             z-index: 10; }
-        .main .main-container .content-radio .container .content-item .title {
-          position: absolute;
-          width: 100%;
-          left: 0;
-          top: 103%;
-          text-align: center; }
-          .main .main-container .content-radio .container .content-item .title .main {
-            font-size: 14px;
-            margin: 0;
-            padding: 0;
-            text-transform: uppercase;
-            height: unset; }
-          .main .main-container .content-radio .container .content-item .title .sub {
-            font-size: 12px;
-            font-weight: inherit;
-            color: #666;
-            bottom: unset; }
+          .main .main-container .content-radio .container .content-item .img {
+            width: 100%; }
+            .main .main-container .content-radio .container .content-item .img img {
+              width: 100%;
+              height: 100%;
+              border-radius: 999px; }
+            .main .main-container .content-radio .container .content-item .img .nag {
+              border-radius: 999px; }
+            .main .main-container .content-radio .container .content-item .img .sub span {
+              position: absolute;
+              z-index: 10;
+              padding: 0px 16px;
+              border-radius: 4px;
+              background-color: red;
+              text-transform: uppercase;
+              font-size: 10px;
+              font-weight: 600;
+              bottom: -5px;
+              left: 50%;
+              transform: translateX(-50%); }
+            .main .main-container .content-radio .container .content-item .img .sub img {
+              position: absolute;
+              right: 0;
+              top: 60%;
+              width: 30%;
+              height: auto;
+              z-index: 10; }
+          .main .main-container .content-radio .container .content-item .title {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 103%;
+            text-align: center; }
+            .main .main-container .content-radio .container .content-item .title .main-title {
+              font-size: 14px;
+              margin: 0;
+              padding: 0;
+              text-transform: uppercase;
+              height: unset; }
+            .main .main-container .content-radio .container .content-item .title .sub-title {
+              font-size: 12px;
+              font-weight: inherit;
+              color: #666;
+              bottom: unset; }
 
 @media (max-width: 1023px) {
   .main {

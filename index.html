@@ -325,8 +325,8 @@
                                     </div>
                                 </div>
                                 <span class="title">
-                                    <h3 class="main">Chạm</h3>
-                                    <h3 class="sub">
+                                    <h3 class="main-title">Chạm</h3>
+                                    <h3 class="sub-title">
                                         500 người đang nghe
                                     </h3>
                                 </span>
@@ -344,8 +344,8 @@
                                     <img src="https://photo-resize-zmp3.zadn.vn/w240_r1x1_jpeg/cover/e/8/5/c/e85cd54f851f926cb014e594f9ca3c83.jpg" alt="">
                                 </div>
                                 <div class="title">
-                                    <h3 class="main">Hồ Quang Hiếu</h3>
-                                    <h3 class="sub">
+                                    <h3 class="main-title">Hồ Quang Hiếu</h3>
+                                    <h3 class="sub-title">
                                         9832 người đang nghe
                                     </h3>
                                 </div>
@@ -363,8 +363,8 @@
                                     <img src="https://photo-resize-zmp3.zadn.vn/w240_r1x1_jpeg/cover/5/a/5/8/5a5813ac623cd00f9d15ce03b3c6659c.jpg" alt="">
                                 </div>
                                 <div class="title">
-                                    <h3 class="main">Tùng Sơn</h3>
-                                    <h3 class="sub">
+                                    <h3 class="main-title">Tùng Sơn</h3>
+                                    <h3 class="sub-title">
                                         598 người đang nghe
                                     </h3>
                                 </div>
@@ -382,8 +382,8 @@
                                     <img src="https://photo-resize-zmp3.zadn.vn/w240_r1x1_jpeg/cover/5/b/8/8/5b88cb60806eff50fc1f431c2fef6abe.jpg" alt="">
                                 </div>
                                 <div class="title">
-                                    <h3 class="main">Sơn Tùng</h3>
-                                    <h3 class="sub">
+                                    <h3 class="main-title">Sơn Tùng</h3>
+                                    <h3 class="sub-title">
                                         132 người đang nghe
                                     </h3>
                                 </div>
@@ -401,8 +401,8 @@
                                     <img src="https://photo-resize-zmp3.zadn.vn/w240_r1x1_jpeg/cover/f/d/7/9/fd79808d2180de9a421afa6aff38953e.jpg" alt="">
                                 </div>
                                 <div class="title">
-                                    <h3 class="main">Big Bang</h3>
-                                    <h3 class="sub">
+                                    <h3 class="main-title">Big Bang</h3>
+                                    <h3 class="sub-title">
                                         987 người đang nghe
                                     </h3>
                                 </div>
@@ -420,8 +420,8 @@
                                     <img src="https://photo-resize-zmp3.zadn.vn/w240_r1x1_jpeg/cover/4/8/c/e/48cefd41cfc03533d52303190f47e6ef.jpg" alt="">
                                 </div>
                                 <div class="title">
-                                    <h3 class="main">V-pop</h3>
-                                    <h3 class="sub">
+                                    <h3 class="main-title">V-pop</h3>
+                                    <h3 class="sub-title">
                                         58 người đang nghe
                                     </h3>
                                 </div>
@@ -433,6 +433,8 @@
                 
                 <div class="zing-chart">
                     <div class="container">
+                        <div class="bg"></div>
+                        <div class="bg-img"></div>
                         <h3 class="title">#ZingChart</h3>
                         <div class="is-chart">
                             <div class="zing-chart-left">
@@ -469,12 +471,14 @@
                                     </div>
                                     <span class="percent">28%</span>
                                 </div>
-                                <span class="chart-btn">
+                                <div class="chart-btn">
                                     <a class="chart-btn" href="#">Xem thêm</a>
-                                </span>
+                                </div>
                             </div>
                             <div class="zing-chart-right">
-                                
+                                <div class="container">
+                                    <canvas id="canvas"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -535,8 +539,10 @@
             
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./library/slick/slick.js"></script>
-    <script src="./js/main.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./library/slick/slick.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script type="text/javascript" src="./js/chart.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
 </body>
 </html>
