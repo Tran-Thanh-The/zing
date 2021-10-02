@@ -90,16 +90,38 @@ $(document).ready(function() {
             $('.control audio').attr( "src", this.songs[this.currentIndex].path);
         },
         nextSong: function() {
+            let $currentPlaylist = $('.song-item');
+            $($currentPlaylist[this.currentIndex]).removeClass("song-playing");
             this.currentIndex ++;
             if ( this.currentIndex >= this.songs.length)
                 this.currentIndex = 0;
+            $($currentPlaylist[this.currentIndex]).addClass("song-playing");  
             this.loadCurrentSong();
         },
         backSong: function() {
+            let $currentPlaylist = $('.song-item');
+            $($currentPlaylist[this.currentIndex]).removeClass("song-playing");
             this.currentIndex --;
             if ( this.currentIndex < 0 )
                 this.currentIndex = this.songs.length - 1;
+            $($currentPlaylist[this.currentIndex]).addClass("song-playing");
             this.loadCurrentSong();
+        },
+        loadSelectedSong: function() {
+            let _this = this;
+            let $currentPlaylist = $('.song-item');
+            $currentPlaylist.click( function() {
+                let __this = this;
+                $($currentPlaylist[_this.currentIndex]).removeClass("song-playing");
+                $(this).addClass("song-playing");
+                $currentPlaylist.each(function (index, value) {
+                    if ( value == __this) {
+                        _this.currentIndex = index;
+                        _this.loadCurrentSong();
+                    }
+                });
+            });
+
         },
         handle: function() {
             const _this = this;
@@ -168,11 +190,24 @@ $(document).ready(function() {
                 progress.value = 0;
                 audio.play();
             }
+            // xử lí volume
+            $volumeInput = $("#volume-input")[0];
+            $volumeInput.value = 100;
+            $volumeInput.onchange = function(e){
+                audio.volume = ( e.target.value / 100);
+            };
+            
+        },
+        handleOnListSong: function() {
+            let $currentPlaylist = $('.song-item');
+            $($currentPlaylist[this.currentIndex]).addClass("song-playing");
         },
         start: function() {
             this.handle();
             this.loadCurrentSong();
             this.render();
+            this.handleOnListSong();
+            this.loadSelectedSong();
         },
     }
     app.start();

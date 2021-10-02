@@ -1281,7 +1281,8 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    border-radius: 8px; }
+    border-radius: 8px;
+    cursor: pointer; }
     .list-song .list .song-item .song-detail {
       display: flex;
       align-items: center;
