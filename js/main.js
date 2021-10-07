@@ -118,6 +118,7 @@ $(document).ready(function() {
                     if ( value == __this) {
                         _this.currentIndex = index;
                         _this.loadCurrentSong();
+                        audio.play();
                     }
                 });
             });
